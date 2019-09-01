@@ -1,1 +1,1 @@
-__all__ = ['Question', 'QuizSession', 'QuizXMLSetup']
+__all__ = ['Question', 'QuizSession', 'QuizXMLSetup', 'TTS']

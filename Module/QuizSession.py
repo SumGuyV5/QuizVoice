@@ -1,12 +1,18 @@
 #!/usr/bin/env python
 from Module.Question import Question
+from Module.TTS import TTS
 
 
 class QuizSession:
+
     """Runs the main control for the game."""
 
     def __init__(self, questions):
-        """init the variables """
+        """
+        init the variables pass False to TTS obj to use print over TTS
+        :param questions: the list of quests to ask the user.
+        """
+        self.tts = TTS()
         self.score = 0
         self.questions = questions
 
@@ -20,25 +26,25 @@ class QuizSession:
             i.create_rand_options()
 
             while True:
-                print(i.text)
+                self.tts.say(i.text)
                 count = 1
-                print("is it...")
+                self.tts.say("is it...")
                 for op in i.options:
-                    print(f'{str(count)} {op}')
+                    self.tts.say(f'{str(count)} {op}')
                     count = count + 1
 
                 answer = input("press a num\n")
 
                 check = i.check_input(answer)
                 if check == 0:
-                    print("Your Right!")
+                    self.tts.say("Your Right!")
                     self.score += 1
                     break
                 elif check == 1:
-                    print("Your Wrong!")
+                    self.tts.say("Your Wrong!")
                     break
                 elif check == 2:
-                    print("Repeat.")
+                    self.tts.say("Repeat.")
             print(i.more_info)
             print(i.source)
             print("---------------------------")
@@ -49,8 +55,8 @@ class QuizSession:
 
         :return:
         """
-        print("Thank you for playing Quiz!")
-        print(f'You Got {str(self.score)} question right!')
+        self.tts.say("Thank you for playing Quiz!")
+        self.tts.say(f'You Got {str(self.score)} question right!')
 
 
 if __name__ == "__main__":

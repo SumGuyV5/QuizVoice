@@ -6,7 +6,6 @@ from Module.Question import Question
 from Module.QuizSession import QuizSession
 
 from xml.dom.minidom import parse
-from xml.etree.ElementTree import ParseError
 
 
 class QuizXMLSetup:
@@ -125,15 +124,13 @@ class QuizXMLSetup:
         fact = ""
         source = ""
 
-        try:
-            fact = question.getElementsByTagName("Facts")[0].firstChild.nodeValue
-        except ParseError:
-            pass
+        for f in question.getElementsByTagName("Facts"):
+            fact = f.firstChild.nodeValue
+            break
 
-        try:
-            source = question.getElementsByTagName("Source")[0].firstChild.nodeValue
-        except ParseError:
-            pass
+        for s in question.getElementsByTagName("Source"):
+            source = s.firstChild.nodeValue
+            break
 
         facts_list.append(fact)
         facts_list.append(source)
