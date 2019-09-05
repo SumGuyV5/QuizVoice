@@ -7,9 +7,9 @@ class TTS:
     def __init__(self, tts=True):
         self.tts = tts
 
-    def say(self, text):
+    def say(self, text, options="" ):
         if self.tts:
             TTS.engine.say(text)
             TTS.engine.runAndWait()
         else:
-            print(text)
+            print(options + text)

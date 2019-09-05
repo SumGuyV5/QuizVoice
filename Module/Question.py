@@ -29,11 +29,12 @@ class Question:
         self.options.insert(rand, opt)
         self.answer = rand
 
-    def check_input(self, user_input):
+    def check_input(self, user_input, range_max):
         """
         Check the users input.
 
         :param user_input: The user input to check if it is correct.
+        :param range_max: This is the max range of options.
         :return: return 0 if the input is correct, 1 if the input is wrong and 2 if the input is out of range.
         """
         try:
@@ -42,7 +43,7 @@ class Question:
             print('Digits only please.')
             input_num = -1
 
-        if input_num > 4 or input_num < 1:
+        if input_num > range_max or input_num < 1:
             return 2
 
         if input_num - 1 == self.answer:

@@ -44,26 +44,26 @@
 	</Question>
 	<Question>
 		<Text>How old do you have to be to become president of the U.S.A.?</Text>
-		<Option>35<Answer /></Option>
-		<Option>21</Option>
-		<Option>18</Option>
-		<Option>40</Option>
+		<Option>Thirty Five<Answer /></Option>
+		<Option>Twenty One</Option>
+		<Option>Eighteen</Option>
+		<Option>Forty</Option>
 		<Source>http://en.wikipedia.org/wiki/President_of_the_United_States</Source>
 	</Question>
 	<Question>
 		<Text>How many provinces are there in Canada?</Text>
-		<Option>10<Answer /></Option>
-		<Option>12</Option>
-		<Option>13</Option>
-		<Option>9</Option>
+		<Option>Ten<Answer /></Option>
+		<Option>Twelve</Option>
+		<Option>Thirteen</Option>
+		<Option>Nine</Option>
 		<Source>http://wiki.answers.com/Q/How_many_provinces_and_territories_are_there_in_Canada</Source>
 	</Question>
 	<Question>
 		<Text>How many EU member states are there?</Text>
-		<Option>27<Answer /></Option>
-		<Option>0</Option>
-		<Option>24</Option>
-		<Option>16</Option>
+		<Option>Twenty Seven<Answer /></Option>
+		<Option>Zero</Option>
+		<Option>Twenty Four</Option>
+		<Option>Sixteen</Option>
 		<Source>http://en.wikipedia.org/wiki/European_Union</Source>
 	</Question>
 </Quiz>

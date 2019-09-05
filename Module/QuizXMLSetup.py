@@ -29,32 +29,25 @@ class QuizXMLSetup:
         """
         random.seed()
 
-        """if there less questions available
+        """if there less unique questions available then request
         we change how_many variable to self.num"""
         if self.num < how_many:
             how_many = self.num
 
         nums_list = []
+        while len(nums_list) < how_many:
+            # generate random number this number corresponds to a question load into self.questions.
+            rand = random.randrange(0, self.num)
 
-        count = 1
-        while True:
-            if self.num > 0:
-                rand = random.randrange(0, self.num)
-            else:
-                rand = 0
-
+            # check that the random number is not already in or list. Add it to the list if unique.
             if nums_list.count(rand) == 0:
                 nums_list.append(rand)
-                count += 1
 
-            if count > how_many:
-                break  # exit the while loop
-
-        temp = []
+        question_tmp = []
         for num in nums_list:
-            temp.append(self.questions[num])
+            question_tmp.append(self.questions[num])
 
-        session = QuizSession(temp)
+        session = QuizSession(question_tmp)
 
         return session
 

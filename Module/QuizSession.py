@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from Module.Question import Question
 from Module.TTS import TTS
+from Module.STT import STT
 
 
 class QuizSession:
@@ -13,6 +14,7 @@ class QuizSession:
         :param questions: the list of quests to ask the user.
         """
         self.tts = TTS()
+        self.stt = STT()
         self.score = 0
         self.questions = questions
 
@@ -27,15 +29,13 @@ class QuizSession:
 
             while True:
                 self.tts.say(i.text)
-                count = 1
                 self.tts.say("is it...")
-                for op in i.options:
-                    self.tts.say(f'{str(count)} {op}')
-                    count = count + 1
+                for idx, op in enumerate(i.options):
+                    self.tts.say(op, str(idx + 1))
 
-                answer = input("press a num\n")
+                answer = self.stt.speech_rec("press num\n", i.options)
 
-                check = i.check_input(answer)
+                check = i.check_input(answer, len(i.options))
                 if check == 0:
                     self.tts.say("Your Right!")
                     self.score += 1
@@ -45,6 +45,7 @@ class QuizSession:
                     break
                 elif check == 2:
                     self.tts.say("Repeat.")
+
             print(i.more_info)
             print(i.source)
             print("---------------------------")
@@ -55,8 +56,8 @@ class QuizSession:
 
         :return:
         """
-        self.tts.say("Thank you for playing Quiz!")
-        self.tts.say(f'You Got {str(self.score)} question right!')
+        self.tts.say("Thank you for playing Quiz Voice!")
+        self.tts.say(f'You Got {str(self.score)} questions right!')
 
 
 if __name__ == "__main__":

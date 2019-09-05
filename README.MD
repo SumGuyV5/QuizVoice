@@ -1,7 +1,7 @@
 """***************************************************************
 **  Program Name:   QuizVoice               					**
 **  Version Number: V1.0                                        **
-**  Copyright (C):  June 15, 2009 Richard W. Allen              **
+**  Copyright (C):  August 29, 2009 Richard W. Allen            **
 **  Date Started:   August 29, 2019                             **
 **  Date Ended:     September 15, 2019                          **
 **  Author:         Richard W. Allen                            **
