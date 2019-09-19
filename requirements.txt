@@ -1,0 +1,6 @@
+pocketsphinx==0.1.15
+PyAudio==0.2.11
+pypiwin32==223
+pyttsx3==2.71
+pywin32==224
+SpeechRecognition==3.8.1
